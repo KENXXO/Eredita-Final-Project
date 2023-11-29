@@ -148,12 +148,13 @@ Modifiers:
 
 - Only After Death Confirmation Modifier:
   - Description: Ensures that specific functions can only be called after the death of the participant has been confirmed, providing an additional layer of security and authenticity to the estate execution process.
-## Example of Smart Contract Code
+## Example of Smart Contract Code""")
+
 imagec = Image.open('code.jpg')
 st.image(imagec,caption="Asset Management Demo Contract", width=350)
 
-## Theoretical Process from Consumer Perspective
-""")
+st.markdown("## Theoretical Process from Consumer Perspective")
+
 st.divider()
 st.markdown("In theory, when using on the consumer side, the user would sign up for an account and then proceed to upload the required documentation for user authentication. This process we plan on streamlining as we acquire a wider client base. From there, the client would set up his estate distribution, depending on what he has. If he is digitizing his current plan, then "
             "it is a matter of transferring the information and compiling the contracts. If not, it starts from scratch. All legal components are handled by the in-house legal department, and once compiled, the"
