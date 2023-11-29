@@ -1,0 +1,157 @@
+import streamlit as st
+
+st.title("Walkthrough and Logic of Ereditá")
+st.divider()
+st.markdown("""
+All assets can exist under the creation of one single smart contract. However, it's essential to consider the complexity 
+and scalability of the system given the variety of assets that may be transferred. As the number of assets and users increases, 
+the smart contract's code and requirements may become impractical to maintain or inefficient. It would also make it very unorganized 
+and horrible to work with in future scenarios. 
+
+In a complex system such like the one we are proposing, it is better to 
+modularize the functionality into multiple smart contracts. Each type of asset or specific functionality 
+(such as managing different types of assets or executing transfers) could have its own smart contract. 
+This approach provides better organization, scalability, and maintainability in the long run, 
+making the system more manageable and understandable for both ends of the user and programmer. In terms of numbers, 
+it will take 7 baseline smart contracts that always need to be featured, with the rest of them depending of the number 
+of assets and their categories. Here is an example of how that may look schematically, and then how it would look with inputs and outputs:
+1. User Management Contract
+    - Manages user registration, authentication, and access control to the platform.
+
+2. Inheritance Plan Management Contract
+    - Handles the creation, modification, and deletion of inheritance plans.
+    - Contains functions related to specifying assets, beneficiaries, and conditions.
+
+3. Asset Management Contracts:
+    - Real Estate Contract: Manages real estate assets and their transfers.
+    - Financial Assets Contract:Handles stocks, bonds, and other financial instruments.
+    - Artwork Contract: Manages artwork and collectibles.
+    - Business Interests Contract: Deals with ownership stakes in businesses.
+    - Insurance Policies Contract: Manages insurance policies and their beneficiaries.
+    - Debts and Loans Contract: Handles loans, debts, and their transfers.
+
+4. Identity Verification Contract:
+    -  Verifies the identity of contract parties such as beneficiaries and legal representatives.
+
+5. Transaction Record Contract:
+    - Records all transactions and changes made to the inheritance plans, providing transparency and auditability.
+
+6. Confirm Passing Function:
+    - Confirms the passing of the participant, enabling the execution of the estate 
+plan.
+ 
+7. Execute Estate Function:
+    - Executes the inheritance plan, transferring funds and assets to the designated 
+beneficiaries as per the established plan.
+
+8.  Contract Initialization
+    - Initializes the contract with the address of the deceased participant and sets the  
+executor as the deployer of the contract.
+
+There are some modifiers to consider as well, such as the Only Executor Modifier and Only After Death Confirmation Modifier. These restrict certain functions to be accessible only by the executor (the entity responsible for executing the estate plan) and ensures that specific functions can only be called after the death of the participant has been confirmed, respectively. Here is how it would look from an input/output perspective:
+1. User Management Contract:
+- Register User Function:
+  - Inputs:
+	- None. The function captures `msg.sender` automatically when called.
+  - Expected Behavior/Role:
+	- Registers the user within the system.
+  - Outputs:
+	- None.
+- Authenticate User Function:
+  - Inputs:
+	- None. The function uses `msg.sender` for authentication.
+  - Expected Behavior/Role:
+	- Verifies if the sender is a registered user.
+  - Outputs:
+	- `isAuthenticated`: Boolean indicating whether the sender is authenticated.
+2. Inheritance Plan Management Contract:
+- Create Inheritance Plan Function:
+  - Inputs:
+	- `userAddress`: Address of the user creating the plan.
+	- `assetDetails`: Details of the assets to be distributed.
+	- `beneficiaryDetails`: Details of the beneficiaries.
+	- `conditions`: Triggers and conditions for asset distribution.
+  - Expected Behavior/Role:
+	- Captures `userAddress` automatically from the transaction.
+	- Creates a customized inheritance plan based on the provided inputs.
+  - Outputs:
+	- `planID`: Unique identifier for the created inheritance plan.
+
+- Modify Inheritance Plan Function:
+  - Inputs:
+	- `planID`: Identifier of the plan to be modified.
+	- `updatedDetails`: Updated information for the plan.
+ - Expected Behavior/Role:
+	- Captures `msg.sender` automatically, verifying the executor.
+	- Allows users to modify existing inheritance plans.
+  - Outputs:
+	- `success`: Boolean indicating whether the modification was successful.
+
+3. Asset Management Contracts:
+- Real Estate Contract:
+  - Inputs:
+	- `ownerAddress`: Address of the asset owner adding the real estate asset to the system.
+	- `assetDetails`: Details of the real estate property.
+  - Expected Behavior/Role:
+	- Captures `msg.sender` automatically.
+	- Creates a new real estate asset entry in the system.
+  - Outputs:
+	- `assetID`: Unique identifier for the created real estate asset.
+
+- Financial Assets Contract:
+  - Inputs:
+	- `ownerAddress`: Address of the owner adding the financial asset.
+	- `assetDetails`: Details of the financial instrument.
+  - Expected Behavior/Role:
+	- Captures `msg.sender` automatically.
+	- Adds the financial asset to the owner's portfolio.
+  - Outputs:
+	- `assetID`: Unique identifier for the created financial asset.
+
+- Artwork Contract:
+  - Inputs:
+	- `ownerAddress`: Address of the artwork owner.
+	- `artworkDetails`: Details of the artwork, such as artist, medium, etc.
+  - Expected Behavior/Role:
+	- Captures `msg.sender` automatically.
+	- Registers the artwork under the owner's name.
+  - Outputs:
+	- `artworkID`: Unique identifier for the registered artwork.
+
+(Similar input, behavior, and outputs can be defined for Business Interests Contract, Insurance Policies Contract, and Debts and Loans Contract.)
+
+4. Identity Verification Contract:
+- Verify Identity Function:
+  - Inputs:
+	- `userAddress`: Address of the user to be verified.
+	- `verificationDocuments`: Documents for identity verification.
+  - Expected Behavior/Role:
+	- Captures `msg.sender` automatically.
+	- Verifies the identity of the user based on the provided documents.
+  - Outputs:
+	- `isVerified`: Boolean indicating whether the user is verified.
+5. Transaction Record Contract:
+- Record Transaction Function:
+  - Inputs:
+	- `userAddress`: Address of the user initiating the transaction.
+	- `transactionDetails`: Details of the transaction or change made.
+  - Expected Behavior/Role:
+	- Captures `msg.sender` automatically.
+	- Records the transaction or change for auditing purposes.
+  - Outputs:
+	- `transactionID`: Unique identifier for the recorded transaction.
+
+Modifiers:
+- Only Executor Modifier:
+  - Description: Restricts certain functions to be accessible only by the executor, ensuring that critical actions are executed by authorized entities responsible for estate management.
+
+- Only After Death Confirmation Modifier:
+  - Description: Ensures that specific functions can only be called after the death of the participant has been confirmed, providing an additional layer of security and authenticity to the estate execution process.
+
+## Theoretical Process from Consumer Perspective
+""")
+st.divider()
+st.markdown("In theory, when using on the consumer side, the user would sign up for an account and then proceed to upload the required documentation for user authentication. This process we plan on streamlining as we acquire a wider client base. From there, the client would set up his estate distribution, depending on what he has. If he is digitizing his current plan, then "
+            "it is a matter of transferring the information and compiling the contracts. If not, it starts from scratch. All legal components are handled by the in-house legal department, and once compiled, the"
+            "contract is deployed. For the execution, we have as a stretch goal to be able to automize the confirm passing function and commence distribution, "
+            "but as it stands it would require an external user to confirmand validate passing in order to execute the contracts.")
