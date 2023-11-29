@@ -1,4 +1,5 @@
 import streamlit as st
+from PIL import Image
 
 st.title("Walkthrough and Logic of Ereditá")
 st.divider()
@@ -147,6 +148,9 @@ Modifiers:
 
 - Only After Death Confirmation Modifier:
   - Description: Ensures that specific functions can only be called after the death of the participant has been confirmed, providing an additional layer of security and authenticity to the estate execution process.
+## Example of Smart Contract Code
+imagec = Image.open('code.jpg')
+st.image(imagec,caption="Asset Management Demo Contract", width=350)
 
 ## Theoretical Process from Consumer Perspective
 """)
