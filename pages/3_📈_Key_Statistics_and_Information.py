@@ -74,12 +74,12 @@ st.markdown("""
 st.title("Have questions of your own? Try out our EstateBot!🤖")
 
 selected_text = st.text_input("Enter your question:")
-st.write("For demo purposes, the bot can only answer 3 questions phrased as: Key Issues, What is Ereditá? and Give me fun facts about estate planning.")
+st.write("For demo purposes, the bot can only answer 3 questions phrased as: Key Issues, What is Eredità? and Give me fun facts about estate planning.")
 answers = {
     "key issues": """
 Inheritance planning has long been steeped in tradition, often relying on conventional methods. Eredita disrupts this tradition by introducing a modern, technology-driven approach, leveraging blockchain to provide transparency, security, and efficiency. The platform addresses the digital divide by offering an inclusive, user-friendly interface, aiming to bridge gaps in accessing financial services. Education is at the forefront of Eredita, empowering users with insights into legal aspects, blockchain benefits, and the intricacies of inheritance planning. We go beyond being a platform; we're an educational resource fostering informed decision-making. Perception plays a pivotal role in how individuals approach estate planning. Eredita aims to reshape perceptions by showcasing the benefits of blockchain technology—ensuring transparency, reducing friction in asset distribution, and providing a user-centric experience. Together, we strive to redefine how people perceive and engage with legacy planning.
 """,
-    "what is eredità?": "Eredita is a digital B2B and B2C platform that utilizes blockchain and smart contract technologies in order to digitize and modernize the estate planning industry. Its goal is to empower individuals to navigate and secure their legacies while providing comprehensive educational resources to foster greater awareness and understanding of this critical aspect of financial planning."
+    "what is eredità?": "Eredità is a digital B2B and B2C platform that utilizes blockchain and smart contract technologies in order to digitize and modernize the estate planning industry. Its goal is to empower individuals to navigate and secure their legacies while providing comprehensive educational resources to foster greater awareness and understanding of this critical aspect of financial planning."
 ,
     "give me fun facts about estate planning": """
 Shortest will written: “All to son.”
