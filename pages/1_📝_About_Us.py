@@ -35,8 +35,8 @@ left_co, cent_co,last_co = st.columns(3)
 with cent_co:
     st.image(imagek,caption="Kenneth pictured in 2023 at UCF", width=350)
 st.markdown("Kenneth Colón was born and raised in San Juan, Puerto Rico. After moving to "
-                "Florida, he quickly shifted his focus on his accounting and finance studies at"
-                "the University of Central Florida. After obtaining his undergraduate degree with a double"
+                "Florida, he quickly shifted his focus on his accounting and finance studies at "
+                "the University of Central Florida. After obtaining his undergraduate degree with a double "
                 "major in Accounting and Finance, he then proceeded to earn his CPA license and "
                 "earn an MS in Financial Technology from his alma mater.")
 
@@ -49,8 +49,8 @@ st.markdown("Carlo Manfredini is from Modena, Italy and graduated from UCF with 
 
 #Innovation and Transformation at the Heart
 st.header("Innovation and Transformation at the Heart")
-st.markdown("Eredita is not just a platform; it's a dedication to innovation. It all started in a Capstone class as an idea, but"
-            "By integrating cutting-edge technologies like blockchain, we provide a secure, transparent, and automated approach to legacy planning. "
+st.markdown("Eredita is not just a platform; it's a dedication to innovation. It all started in a Capstone class as an idea, but "
+            "by integrating cutting-edge technologies like blockchain, we provide a secure, transparent, and automated approach to legacy planning. "
             "Security, customizable smart contracts, convenience, and our user-centric approach exemplify our commitment to reshaping inheritance planning.")
 
 # Connect with Us
