@@ -28,7 +28,7 @@ st.markdown("Rooted in transparency, security, and user empowerment, "
 # Team Section
 st.header("Meet our Team")
 
-imagek = Image.open('https://github.com/KENXXO/Test/blob/main/kenny.jpg')
+imagek = Image.open('https://github.com/KENXXO/Test/blob/main/kenny.JPG')
 imagec = Image.open('https://github.com/KENXXO/Test/blob/main/carlo.jpg')
 
 left_co, cent_co,last_co = st.columns(3)
