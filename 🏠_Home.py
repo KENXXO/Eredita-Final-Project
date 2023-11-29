@@ -7,7 +7,7 @@ st.set_page_config(
 )
 
 
-image = Image.open('eredita.jpg)
+image = Image.open('eredita.jpg')
 
 left_co, cent_co,last_co = st.columns(3)
 with cent_co:
