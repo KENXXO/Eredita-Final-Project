@@ -28,12 +28,12 @@ st.markdown("Rooted in transparency, security, and user empowerment, "
 # Team Section
 st.header("Meet our Team")
 
-imagek = Image.open('https://github.com/KENXXO/Test/blob/main/kenny.JPG')
+#imagek = Image.open('https://github.com/KENXXO/Test/blob/main/kenny.JPG')
 imagec = Image.open('https://github.com/KENXXO/Test/blob/main/carlo.jpg')
 
-left_co, cent_co,last_co = st.columns(3)
-with cent_co:
-    st.image(imagek,caption="Kenneth pictured in 2023 at UCF", width=350)
+#left_co, cent_co,last_co = st.columns(3)
+#with cent_co:
+    #st.image(imagek,caption="Kenneth pictured in 2023 at UCF", width=350)
 st.markdown("Kenneth Colón was born and raised in San Juan, Puerto Rico. After moving to "
                 "Florida, he quickly shifted his focus on his accounting and finance studies at"
                 "the University of Central Florida. After obtaining his undergraduate degree with a double"
