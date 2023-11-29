@@ -151,7 +151,7 @@ Modifiers:
 ## Example of Smart Contract Code""")
 
 imagec = Image.open('code.jpg')
-st.image(imagec,caption="Asset Management Demo Contract", width=350)
+st.image(imagec,caption="Asset Management Demo Contract", width=700)
 
 st.markdown("## Theoretical Process from Consumer Perspective")
 
